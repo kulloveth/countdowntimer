@@ -15,26 +15,36 @@
  */
 package com.example.androiddevchallenge.ui.screen
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Card
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
 
 @Composable
 fun TimerScreen() {
-    Card(backgroundColor = MaterialTheme.colors.onSecondary, elevation = 6.dp) {
-        Column() {
+    Card(
+        backgroundColor = Color.Gray,
+        elevation = 6.dp,
+        modifier = Modifier
+            .padding(20.dp)
+    ) {
+        Column(
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier.height(200.dp)
+        ) {
             Row() {
                 Box() {
                 }
@@ -48,15 +58,24 @@ fun TimerScreen() {
                     .fillMaxWidth()
                     .height(20.dp)
             )
-            Row() {
+            Row(horizontalArrangement = Arrangement.Center, modifier = Modifier.fillMaxWidth()) {
                 IconButton(onClick = {}) {
-                    Icon(painter = painterResource(id = R.drawable.ic_baseline_pause_24), contentDescription = null)
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_baseline_pause_24),
+                        contentDescription = null
+                    )
                 }
                 IconButton(onClick = {}) {
-                    Icon(painter = painterResource(id = R.drawable.ic_baseline_play_arrow_24), contentDescription = null)
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_baseline_play_arrow_24),
+                        contentDescription = null
+                    )
                 }
                 IconButton(onClick = {}) {
-                    Icon(painter = painterResource(id = R.drawable.ic_baseline_refresh_24), contentDescription = null)
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_baseline_refresh_24),
+                        contentDescription = null
+                    )
                 }
             }
         }
