@@ -16,7 +16,6 @@
 package com.example.androiddevchallenge.ui.screen
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -30,6 +29,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.component.ControlButton
+import com.example.androiddevchallenge.ui.component.CounterDisplay
 
 @Composable
 fun TimerScreen() {
@@ -43,13 +43,10 @@ fun TimerScreen() {
             verticalArrangement = Arrangement.Center,
             modifier = Modifier.height(200.dp)
         ) {
-            Row() {
-                Box() {
-                }
-                Box() {
-                }
-                Box() {
-                }
+            Row(horizontalArrangement = Arrangement.SpaceEvenly, modifier = Modifier.fillMaxWidth()) {
+                CounterDisplay(counter = 10)
+                CounterDisplay(counter = 10)
+                CounterDisplay(counter = 10)
             }
             Spacer(
                 modifier = Modifier
