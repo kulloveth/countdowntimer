@@ -15,8 +15,18 @@
  */
 package com.example.androiddevchallenge.ui.component
 
+import androidx.annotation.DrawableRes
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.painterResource
 
 @Composable
-fun ControlButton(onClick: () -> Unit,) {
+fun ControlButton(onControlClick: () -> Unit, @DrawableRes id: Int, controlDescription: String?) {
+    IconButton(onClick = onControlClick) {
+        Icon(
+            painter = painterResource(id = id),
+            contentDescription = controlDescription
+        )
+    }
 }

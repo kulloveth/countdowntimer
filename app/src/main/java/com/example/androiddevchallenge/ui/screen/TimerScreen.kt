@@ -24,14 +24,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Card
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
+import com.example.androiddevchallenge.ui.component.ControlButton
 
 @Composable
 fun TimerScreen() {
@@ -59,24 +57,21 @@ fun TimerScreen() {
                     .height(20.dp)
             )
             Row(horizontalArrangement = Arrangement.Center, modifier = Modifier.fillMaxWidth()) {
-                IconButton(onClick = {}) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.ic_baseline_pause_24),
-                        contentDescription = null
-                    )
-                }
-                IconButton(onClick = {}) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.ic_baseline_play_arrow_24),
-                        contentDescription = null
-                    )
-                }
-                IconButton(onClick = {}) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.ic_baseline_refresh_24),
-                        contentDescription = null
-                    )
-                }
+                ControlButton(
+                    onControlClick = { },
+                    id = R.drawable.ic_baseline_pause_24,
+                    controlDescription = null
+                )
+                ControlButton(
+                    onControlClick = { },
+                    id = R.drawable.ic_baseline_play_arrow_24,
+                    controlDescription = null
+                )
+                ControlButton(
+                    onControlClick = { },
+                    id = R.drawable.ic_baseline_refresh_24,
+                    controlDescription = null
+                )
             }
         }
     }
